@@ -28,6 +28,19 @@
  * 
  */
 
+// Check Distance Active Element
+function getActiveElement() {
+    maxValue = SECTIONS[0]
+    minValue = 1000000
+    for (section of SECTIONS) {
+        let bounding = item.getBoundingClientRect()
+        if (bounding.top > -300 && bounding.top < minValue) {
+            minValue = bounding.top
+            maxValue = section
+        }
+    }
+    return maxValue
+}
 
 
 /**
