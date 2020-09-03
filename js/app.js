@@ -18,6 +18,9 @@
  * 
  */
 
+ let NAVBAR = document.querySelector("#navbar__list")
+ let SECTIONS = document.querySelectorAll("section")
+
 
 /**
  * End Global Variables
@@ -34,6 +37,17 @@
  */
 
 // build the nav
+function navbarItems() {
+    for(let section of SECTIONS) {
+        let navbar__item = document.createElement("li")
+        navbar__item.className = "menu__link"
+        navbar__item.dataset.nav = section.id
+        navbar__item.innerText = section.dataset.nav
+        NAVBAR.appendChild(navbar__item)
+    }
+}
+
+navbarItems();
 
 
 // Add class 'active' to section when near top of viewport
