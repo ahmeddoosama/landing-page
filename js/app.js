@@ -47,14 +47,16 @@ function navbarItems() {
     }
 }
 
-navbarItems();
-
-
 // Add class 'active' to section when near top of viewport
 
 
 // Scroll to anchor ID using scrollTO event
-
+function scrollToEvent() {
+    NAVBAR.addEventListener('click', function (item) {
+        let clickEvent = document.querySelector('#' + item.target.dataset.nav)
+        clickEvent.scrollIntoView()
+    })
+}
 
 /**
  * End Main Functions
@@ -62,8 +64,8 @@ navbarItems();
  * 
  */
 
-// Build menu 
-
+// Build menu
+navbarItems();
 // Scroll to section on link click
-
+scrollToEvent();
 // Set sections as active
